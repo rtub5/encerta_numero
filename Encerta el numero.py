@@ -1,11 +1,18 @@
 import random
+import time
+
 intents = 0 
 
-baix = input("Desdes quin numero vols encertar:")
+baix = input("Des de quin numero vols encertar:")
 alt = input("Fins a: ")
 if baix and alt.isnumeric():
-    print("fica un numero!")
-
+    print("Perfecte!")
+else:
+  print("No pots entrar lletres! El pròxim cop ja ho faràs bé")
+  time.sleep(0.5)
+  print("El programa és tancarà en 10 segons")
+  time.sleep(10)
+  quit()
 
 numero_a_encertar = random.randint(int(baix), int(alt))
 while True:
@@ -22,5 +29,7 @@ while True:
             break
     else:
         print("ERROOOR!!!!!")
-
+        time.sleep(0.5)
+        print("Només pots entrar lletres!")
+        #quit()
 print("Intents: ", intents)
